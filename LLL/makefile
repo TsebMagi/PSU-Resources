@@ -3,6 +3,8 @@ base:
 	./a.out
 
 clean:
+	rm -rf ./a.out
+	g++ setup.cpp
+	./a.out
 	rm ./a.out
-
 update:
