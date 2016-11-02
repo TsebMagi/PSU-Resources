@@ -20,8 +20,9 @@ const char impOut[] = "questions.cpp";
 //file to read from.
 const char inputFile[] = "questions.txt";
 //header printed before each question.
-const char questionHeader[] = "//Place the prototype in the appropriate .h file\n//Consider:\n//Do you need helper functions?\n//Is head or tail recursion better?\n";
-
+const char questionHeader[] = "//Place the prototype in the appropriate .h file\n//Consider:\n//Do you need helper functions?\n//Is head or tail recursion better?\n//Remove the block comments form the function below to get started";
+//file includes
+const char includes[] = "#include \"list.h\"\n#include <iostream>\n#include <cstring>\n#include <cctype>\nusing namespace std;\n\n";
 
 
 const int LONGIN = 1000;
@@ -49,6 +50,8 @@ int main ()
     }
     //opens the output file in truncate mode to rewrite it.
     cppOut.open(impOut, ios::trunc);
+    //print includes to file.
+    cppOut << includes;
     //prime the pump
     in.get(qInput,LONGIN,'\n');
     in.ignore();
@@ -60,9 +63,16 @@ int main ()
         in.ignore();
         in.ignore();
         //print out the question header followed by the question.
-        cppOut << questionHeader << "//" << qInput+3 << endl 
+        cppOut << questionHeader << endl
+               <<"//The question is: " << qInput+3 << endl 
                << "//The difficulty of this question is: " << dInput+3 <<endl
-               << pInput+3 << endl << "{" << endl << "}" <<endl << endl;
+               << endl
+               << "/*"<< endl
+               <<pInput+3 << endl 
+               << "{" << endl 
+               << "}" << endl
+               << "*/" <<endl 
+               << endl;
 
         //prime for next step of loop
         in.get(qInput,LONGIN,'\n');

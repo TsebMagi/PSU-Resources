@@ -1,10 +1,10 @@
 base:
-	g++ *.cpp *.o -Wall
-	./a.out
-
+	g++ main.cpp *.o -Wall
 clean:
 	rm -rf ./a.out
 	g++ setup.cpp
 	./a.out
 	rm ./a.out
-update:
+run:
+	g++ main.cpp questions.cpp *.o
+	./a.out
