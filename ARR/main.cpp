@@ -13,6 +13,5 @@ int main()
 
     object.display();  //display again afterward!
         
-    object.ourDisplay();
     return 0;
 }
