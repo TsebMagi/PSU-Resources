@@ -52,7 +52,7 @@ def read_file(filename):
 # Format a question, given a valid dictionary
 def format_question(q_dict):
     return QUESTION_HEADER \
-            + "//The question is:" + q_dict["Q"]\
+            + "//The question is: " + q_dict["Q"]\
             + "\n//The difficulty of this question is: " + q_dict["D"]\
             + "\n/*\n" \
             + q_dict["P"] + "\n{\n\n}" \
