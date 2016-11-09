@@ -3,7 +3,7 @@
 # given a formatted question.txt,
 # produce a question.cpp in a proper directory
 
-import re, argparse
+import re, sys
 
 VALID_QUESTION = re.compile("^([D,P,Q]): (.*)")
 
@@ -62,9 +62,12 @@ def format_question(q_dict):
 # and write to file
 def generate_questions(i_filename, o_filename):
     with open(o_filename, "w") as outfile:
-        outfile.write(FRONTMATTER)
+        outfile.write(FRONTMATTER + "\n")
         for item in map(format_question, read_file(i_filename)):
             outfile.write(item + "\n")
 
 if __name__ == "__main__":
-    generate_questions("LLL/questions.txt", "test.cpp")
+    if len(sys.argv) < 2:
+        sys.exit(sys.argv[0] + " [input file] [output cpp] ")
+    
+    generate_questions(sys.argv[1], sys.argv[2])
