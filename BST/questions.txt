@@ -1,0 +1,47 @@
+Q: Write a function to display the tree in order. Return the number of nodes.
+D: 0
+P: int displayAll(node* root)
+
+Q: Write a function to display the tree in reverse order. Return the number of nodes.
+D: 0
+P: int displayReverse(node* root)
+
+Q: Write a function to display every node that is divisible by the argument passed in. Return number of nodes displayed.
+D: 0
+P: int displayDivisible(node* root, int toDisplay)
+
+Q: Write a function to add the data passed in to the function to the tree.
+D: 1
+P: int insertData(node*& root, int toAdd)
+
+Q: Write a function to remove every node that is divisible by 3 and 5 from the Tree. Return the number of nodes removed
+D: 3
+P: int removeDivisible(node*& root)
+
+Q: Write a function to display the data in the longest path of the tree.
+D: 3
+P: int longestPath(node* root)
+
+Q: Write a function to return the average od the longest path in a tree.
+D: 4
+P: int avgPath(node* root)
+
+Q: Write a function that returns the average of the data contained in the tree
+D: 3
+P: int avgData(node* root)
+
+Q: Write a function to copy all the nodes that are greater than root into a new tree. Return the number of nodes copied
+D: 2
+P: int copyGreater(node* srcRoot, node*& destRoot)
+
+Q: Write a function to copy all even nodes from one tree into a new tree. return number of nodes divisible by 7
+D: 3
+P: int copyDivisible(node* srcRoot, node*& destRoot)
+
+Q: Write a function to remove all the leaves from a tree. return number of nodes removed.
+D: 2
+P: int prune(node*& root)
+
+Q: Write a function to copy a tree, excluding its' root, into a new tree. return number of nodes copied.
+D: 3
+P: int copyNoRoot(node* srcRoot, node*& destRoot)
