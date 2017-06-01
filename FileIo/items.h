@@ -1,6 +1,5 @@
 #ifndef ITEMS_H
 #define ITEMS_H //items.h
-#include "mechanics.h"
 #include <iostream>
 using namespace std;
 
@@ -32,7 +31,6 @@ class Weapon: public Item
     public:
         // Constructors and Destructor
         Weapon();
-        Weapon(int weapon_value, char* weapon_description, Attack* attacks_vector);
         Weapon(int weapon_value, char* weapon_description, int weapon_damage, int damage_type, char* attack_description);
         Weapon(const Weapon& to_copy);
         ~Weapon();
@@ -40,8 +38,9 @@ class Weapon: public Item
         void copy(Weapon & to_copy);
         void display();
         virtual void write_out(ofstream& fileOut, char delim);
-
-       Attack* attacks;
-       int num_attacks;
+    private:
+       char* attack_description;
+       int damage;
+       int damage_type;
 };
 #endif //items.h

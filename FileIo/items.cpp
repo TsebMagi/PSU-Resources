@@ -64,17 +64,12 @@ Weapon::Weapon():Item(){
 }
 
 
-Weapon::Weapon(int weapon_value, char* weapon_description, Attack* attacks_vector, int vector_size):Item(weapon_value,weapon_description){
-    num_attacks = vector_size;
-    attacks = new Attack[num_attacks];
-    for(int i = 0; i < num_attacks; ++i)
-        attacks[i].copy(attacks_vector[i]);
-}
-
 
 Weapon::Weapon(int weapon_value, char* weapon_description, int weapon_damage, int damage_type, char* attack_description):Item(weapon_damage,weapon_description){
-    num_attacks = 1;
-    attacks = new AttackAttack(weapon_damage,damage_type,attack_description);
+    this->attack_description = new char[strlen(attack_description)+1];
+    strcpy(this->attack_description, attack_description);
+    this->damage = weapon_damage;
+    this->damage_type = damage_type;
 }
 
 
