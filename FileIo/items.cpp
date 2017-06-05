@@ -28,7 +28,7 @@ Item::Item(int value, char* description){
 }
 
 
-Item::Item(const Item * to_copy){
+Item::Item(const Item & to_copy){
     this->copy(to_copy);
 }
 
@@ -49,27 +49,27 @@ void Item::copy(const Item& to_copy){
 
 
 void Item::display(){
-    cout << "Item Value: " << value << "Description: " << description<< endl; 
+    cout << "Item Value: " << value << endl
+         <<"Description: " << description<< endl; 
 }
 
 
-void Item::write_out(ofstream& fileOut, char delim){
-    fileOut << value << ':' << description << delim;
+void Item::write_out(ofstream& fileOut, char term_char){
+    fileOut << value << ':' << description << term_char;
 }
 
 
 //Weapons implementations
 Weapon::Weapon():Item(){
-    attacks = NULL;
+    attack_description = NULL;
 }
 
 
 
-Weapon::Weapon(int weapon_value, char* weapon_description, int weapon_damage, int damage_type, char* attack_description):Item(weapon_damage,weapon_description){
+Weapon::Weapon(int weapon_value, char* weapon_description, int weapon_damage, char* attack_description):Item(weapon_value,weapon_description){
     this->attack_description = new char[strlen(attack_description)+1];
     strcpy(this->attack_description, attack_description);
     this->damage = weapon_damage;
-    this->damage_type = damage_type;
 }
 
 
@@ -79,14 +79,26 @@ Weapon::Weapon(const Weapon& to_copy){
 
 
 Weapon::~Weapon(){
-    delete[] attacks;
+    delete[] attack_description;
 }
 
 
-void Weapon::copy(Weapon & to_copy){}
+void Weapon::copy(const Weapon & to_copy){
+    Item::copy(to_copy);
+    attack_description = new char[strlen(to_copy.attack_description) + 1];
+    strcpy(attack_description, to_copy.attack_description);
+    damage = to_copy.damage;
+}
 
 
-void Weapon::display(){}
+void Weapon::display(){
+    Item::display();
+    cout << "Attack Description: " << attack_description << endl
+         << "Damage: " << damage << endl;
+}
 
 
-void Weapon::write_out(ofstream& fileOut, char delim){}
+void Weapon::write_out(ofstream& fileOut, char term_char){
+    Item::write_out(fileOut, ':');
+    fileOut << attack_description << ':' << damage << term_char;
+}
