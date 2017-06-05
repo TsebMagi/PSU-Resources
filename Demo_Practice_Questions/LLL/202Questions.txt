@@ -1,0 +1,23 @@
+Q: Write a function to add the data of the first node that is divisible by three or five to every following node in the list. Return number of nodes that occur before one is divisible by three or five.
+D: 3
+P: int modifyAfter(node* head)
+
+Q: Write a function to reverse the List. Return number of nodes in the list.
+D: 3
+P: int reverseAll(node*& head)
+
+Q: Write a function to add a node that contains the data passed into the function at the end of the list for each node that is divisible by the first node's data
+D: 3
+P: int appendIfDivisible (node*& head, int toAdd)
+
+Q: Write a function that takes 2 lists and creates a new list where the nth node is the average of the nth items in the two input lists. Return the average of the new list.
+D: 4
+P: float CopySpecialAvg (node*& source1, node*& source2, node*& dest)
+
+Q: Write a function that returns the average of the unique items in the list.
+D: 3
+P: float averageSpecial (node* head)
+
+Q: Write a function that reverses every 3 nodes in a list, any remainders at the end of the list should be left as they are. Return the number of swapped nodes
+D: 4
+P: int swap3(node*& head)
