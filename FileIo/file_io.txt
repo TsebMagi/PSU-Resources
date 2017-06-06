@@ -2,3 +2,5 @@
 2:5000:Vorpal Sword:Snicker-Snack:30
 1:300:A magical feather
 2:300:Bronze Sword:Slice!:5
+1:100:Gold Bar
+2:300:A plain rapier:Poke:15

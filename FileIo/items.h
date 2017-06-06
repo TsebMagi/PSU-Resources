@@ -15,8 +15,8 @@ class Item
 
         ~Item();
 
-        void copy(const Item& to_copy);
-        void display();
+        virtual void copy(const Item& to_copy);
+        virtual void display();
         virtual void write_out(ofstream& fileOut, char delim);
     private:
         int value;
@@ -35,8 +35,8 @@ class Weapon: public Item
         Weapon(const Weapon& to_copy);
         ~Weapon();
 
-        void copy(const Weapon & to_copy);
-        void display();
+        virtual void copy(const Weapon & to_copy);
+        virtual void display();
         virtual void write_out(ofstream& fileOut, char delim);
     private:
        char* attack_description;

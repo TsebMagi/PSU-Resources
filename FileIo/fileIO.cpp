@@ -19,14 +19,17 @@
 using namespace std;
 
 const int INPUT_SIZE = 301;
+const int ARRAY_SIZE = 10;
 char INPUT[INPUT_SIZE];
 char INPUT2[INPUT_SIZE];
+const char FILE_NAME[] = "file_io.txt";
 
 
+void read_from_file(Item** dest,int& count);
 Item get_Item_info();
 Weapon get_Weapon_info();
+void write_to_file(Item& to_write, char type, ofstream& fout);
 
-const char FILE_NAME[] = "file_io.txt";
 
 int main()
 {
@@ -34,22 +37,56 @@ int main()
     ifstream fin;
     fout.open(FILE_NAME, ios::app);
     int current_num = 0;
-    Item items[10];
+    Item* items[ARRAY_SIZE];
+    bool done = false;
+    char user_input;
 
-    Item temp_item(get_Item_info());
-    Weapon temp_weapon(get_Weapon_info());
+    cout << "This is the File IO demo program.\n"
+         << "We will generate several different data elements and then store them in a file.\n"
+         << "You will write the code to read the items back out from the file." << endl;
 
-    temp_item.display();
-    cout << endl;
-    temp_weapon.display();
-    fout << '1' << ':';
-    temp_item.write_out(fout, '\n');
-    fout << '2' << ':';
-    temp_weapon.write_out(fout, '\n');
+    do {
+        cout << "Enter '1' to make an item.\n"
+            << "Enter '2' to make a weapon.\n"
+            << "Input: ";
+        cin >> user_input;
+        cin.ignore(INPUT_SIZE,'\n');
+        switch (user_input) {
+            case '1':{
+                Item temp_item(get_Item_info());
+                write_to_file(temp_item, user_input, fout);
+                break;
+                     }
+            case '2': {
+                Weapon temp_weapon(get_Weapon_info());
+                write_to_file(temp_weapon, user_input, fout);
+                break;
+                      }
+            default:
+                done = true;
+                break;
+        }
 
+    }while(!done);
     fout.clear();
     fout.close();
+
+
+    // Place code to read from file here.
+
     return 0;
+}
+
+
+
+void read_from_file(Item** dest,int& count){
+
+    return;
+}
+
+void write_to_file(Item& to_write, char type, ofstream& fout){
+    fout << type << ':';
+    to_write.write_out(fout, '\n');
 }
 
 Item get_Item_info(){

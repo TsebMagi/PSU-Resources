@@ -36,6 +36,7 @@ Item::Item(const Item & to_copy){
 Item::~Item(){
     value = 0;
     delete[] description;
+    description = NULL;
 }
 
 
@@ -80,6 +81,7 @@ Weapon::Weapon(const Weapon& to_copy){
 
 Weapon::~Weapon(){
     delete[] attack_description;
+    attack_description = NULL;
 }
 
 
