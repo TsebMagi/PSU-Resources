@@ -45,3 +45,27 @@ P: int prune(node*& root)
 Q: Write a function to copy a tree, excluding its' root, into a new tree. return number of nodes copied.
 D: 3
 P: int copyNoRoot(node* srcRoot, node*& destRoot)
+
+Q: Find and return the most frequently occuring data element in a tree.
+D: 4
+P: int mode(node* root)
+
+Q: Find print the longest sequential streak contained by a tree.
+D: 5
+P: void longest_streak(node* root)
+
+Q: find and return the average length of the paths to leaves in a tree.
+D: 5
+P: float average_length(node* root)
+
+Q: Display the directions taken to the inorder successor.
+D: 4
+P: void Directions(node* root)
+
+Q: Return the sum of the longest Path divided by the sum of the shortest path to a leaf.
+D: 5
+P: float longest_over_shortest(node* root)
+
+Q: Return the sum of the sub tree of height three that has the largest sum.
+D: 5
+P: int max_sub(node* root)
