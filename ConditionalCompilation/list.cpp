@@ -1,7 +1,6 @@
 // Doug Whitley
 // CS162-202 Recitation Code Examples
 // Spring 2017
-
 #include "list.h"
 #include <iostream>
 using namespace std;

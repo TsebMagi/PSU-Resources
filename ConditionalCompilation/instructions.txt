@@ -1,0 +1,25 @@
+This exercise examins the use of conditional compilation.
+Main contains a list that is will be adding and removing from.
+When examining results keep in mind that the list is sorted, so 
+even if items are added in reverse order the resulting list will 
+be in order.
+
+
+1. Examing the main.cpp and makefile files
+2. Run 'make test1'
+3. Run './a.out'
+4. What happened?
+5. Can you think of why that might have happened?
+6. Run 'make test2'
+7. Run './a.out'
+8. What happened?
+9. Why do you think that happened?
+
+10. Try adding a new conditional flag so that the 
+display call at the bottom of main only gets called when that flag 
+is flipped on.
+11. #define the flag you just created at the top of main.
+12. run 'make'
+13. run './a.out'
+14. Try moving the #define you just put in main into the make file
+as a new part of each recipe. 

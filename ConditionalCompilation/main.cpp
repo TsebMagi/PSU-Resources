@@ -35,10 +35,10 @@ int main(){
     // Testing the basic removal cases for an LLL.
     cout << "Removinging 0 from front of List" << endl;
     myList.remove(0);
-    cout << "Removinging 99 from end of List" << endl;
-    myList.remove(99);
     cout << "Removing 50 internal to the List" << endl;
     myList.remove(50);
+    cout << "Removing 99 from the end of the List" << endl;
+    myList.remove(99);
     cout << "Removing item not in List (999)" << endl;
     myList.remove(999);
 #endif
