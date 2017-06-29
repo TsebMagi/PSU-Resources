@@ -15,6 +15,10 @@ Q: Write a function to display every other Node in the list. Return the number o
 D: 1
 P: int displayEveryOther(node* head)
 
+Q: Write a function to display every other node in reverse order starting with the last node. return the number of nodes displayed.
+D: 2
+P: int displayEveryOtherReverse(node* head)
+
 Q: Write a function to add the sum of the data from the first two nodes to the end of the list. Return the sum of the list. 
 D: 1
 P: int addToEnd(node*& head)
