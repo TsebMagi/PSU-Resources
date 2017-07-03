@@ -2,7 +2,7 @@ Is set of folders is designed to give studens lots of
 problems to practice in order to prep for the Proficiency
 Demos
 
-The LLL and BST folders contains sub folders based for the
+The LLL and BST folders contains text files for the
 appropriate classes, each other folder is for CS 202.
 
 Each class folder has a questions.txt file with questions.
