@@ -10,7 +10,6 @@
 // Weapons have the information of an Item followed by a char[] 'attack_description' and an int 'damage' the delimeter between the Item data
 // and the Weapon data is ':' each of the Weapon data elements is also seperated by a ':' and the enry is terminated by a '\n'
 
-
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -18,17 +17,19 @@
 #include "items.h"
 using namespace std;
 
+// Consts and input vars.
 const int INPUT_SIZE = 301;
 const int ARRAY_SIZE = 10;
 char INPUT[INPUT_SIZE];
 char INPUT2[INPUT_SIZE];
 const char FILE_NAME[] = "file_io.txt";
 
-
+// Functions used to read and write to file.
 void read_from_file(Item** dest,int& count);
 Item get_Item_info();
 Weapon get_Weapon_info();
 void write_to_file(Item& to_write, char type, ofstream& fout);
+
 
 
 int main()
@@ -78,17 +79,22 @@ int main()
 }
 
 
-
+// Implement the function to read from file and display the info for each element in the file.
 void read_from_file(Item** dest,int& count){
 
     return;
 }
 
+
+// Writes an the type of an item out to file as well as the rest of the info for the item or weapon.
 void write_to_file(Item& to_write, char type, ofstream& fout){
     fout << type << ':';
     to_write.write_out(fout, '\n');
 }
 
+
+
+// Prompts for info about an item and returns the item created.
 Item get_Item_info(){
     int value;
     cout << "Enter integer value of item: ";
@@ -101,20 +107,26 @@ Item get_Item_info(){
 }
 
 
+// Prompts for info about a weapon and returns the weapon created.
 Weapon get_Weapon_info(){
     int value;
     int damage;
+
     cout << "Enter value of weapon: ";
     cin >> value;
     cin.ignore();
+    
     cout << "Enter description of weapon: ";
     cin.get(INPUT, INPUT_SIZE - 1, '\n');
     cin.ignore(INPUT_SIZE, '\n');
+    
     cout << "Enter weapon damage: ";
     cin >> damage;
     cin.ignore();
+    
     cout << "Enter attack description: ";
     cin.get(INPUT2, INPUT_SIZE - 1, '\n');
     cin.ignore(INPUT_SIZE, '\n');
+    
     return Weapon(value, INPUT, damage, INPUT2);
 }

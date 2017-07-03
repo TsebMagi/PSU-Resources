@@ -1,0 +1,8 @@
+This set of code is designed to give you some experience with more advanced file IO.
+
+Examine the supplied .cpp files to see how the program reads from the user and writes 
+to the file.
+
+After examining the supplied code, implement the read_from_file function in fileIO.cpp.
+You should create Items or Weapons and display them in that funciton until the end of 
+file is reached.
