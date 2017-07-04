@@ -8,8 +8,8 @@ using namespace std;
 
 struct node
 {
-//    node();
-//    ~node();
+    node();
+    ~node();
     int data;
     node * next;
 };
@@ -30,7 +30,7 @@ int addAfter2(node* head, int toAdd);
 
 int appendIfDivisible (node*& head, int toAdd);
 
-int modifyAfter(node* head);
+int modifyAfter2(node*& head);
 
 int addToAll(node* head, int toAdd);
 
