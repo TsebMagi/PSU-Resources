@@ -1,0 +1,32 @@
+In this set of code we will use GDB and valgrind to help find bugs.
+For ease of use the bugs introduced could likely be found by looking 
+at the code long enough but it is highly recomended that you take 
+the time to GDB each problem.
+
+the main() function will not need to be modified the rest of the code
+base is fair game for bugs. 
+
+You should look at main() and then compile and run it. Find the bugs
+by using GDB to help track down unexpected behavior.
+
+If you want to compare your solutions to the 'correct' version use git
+to find the commit that has the correct answers in it and check them 
+out.
+
+GDB basic tips:
+1. Make sure to compile with the -g flag
+2. Use Breakpoints
+3. 'print head' will print head's address while 'print head->data'
+will print the value in the node.
+4. place your break points at the top of recersive functions and
+use continue to move on to the next call
+5. 'l' will print the next set of lines that will be executed to the
+screen.
+
+valgrind basic tips:
+1. Use: valgrind ./a.out --leak-check=full to get the full read out.
+2. 'mismatched free' usually means you used 'delete' instead of 
+'delete []' or vice versa
+3. When looking for leaks the errors will tell you where the memory 
+was alocated, check the destructors that belong to those classes or
+the classes that contain them.
