@@ -1,4 +1,7 @@
 #include "data.h"
+
+
+// ************************************* data1 Implementations ***************************************** //
 data1::data1(int init)
 {
     myData = init;
@@ -34,6 +37,7 @@ void data1::display()
 
 
 
+// ************************************* data2 Implementations ***************************************** //
 data2::data2(int init)
 {
     myData = init;
@@ -67,6 +71,8 @@ void data2::display()
 
 
 
+
+// ************************************* data3 Implementations ***************************************** //
 data3::data3(char init)
 {
     myData = init;

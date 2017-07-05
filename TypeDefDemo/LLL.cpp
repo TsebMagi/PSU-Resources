@@ -67,7 +67,7 @@ int LLL::remove(node*& head, dataType& toRemove)
     if((head->data.compare(toRemove)) == 0)
     {
         node* temp = head;
-        head= head->next;
+        head = head->next;
         delete temp;
         return 1;
     }
