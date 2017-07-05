@@ -70,8 +70,8 @@ int readInfo()
 
         myData.edit(input);
         myData.display();
-
-        fIn.get(input,199,':');
+        // Make sure you pull the appropriate number of characters form the buffer.
+        fIn.get(input,3,':');
         fIn.ignore();
     }
 
