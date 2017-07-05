@@ -1,0 +1,28 @@
+git init <enter>
+git add .
+git commit -m “initial commit”
+Add some comments to your main.
+git status
+git add <file name>
+git commit
+<enter a commit message into the resulting screen that appears>
+git log 
+Add another set of comments to your main
+git add <filename> 
+git commit
+git log
+look for the first set of comments you added.
+git revert <the hash you just found>
+Resolve any needed modification from the revert
+git log
+open main and see how your code has changed.
+git log
+find the commit hash of your initial commit
+git reset <initial commit hash> --hard
+look at your main
+
+You should now have a main that is missing all the comments. This is 
+because we just removed all the commits that had been made since the 
+initial commit if we had not used the  --hard flag then the local 
+files wouldn't have been changed but the commits would have been 
+removed from the log.
