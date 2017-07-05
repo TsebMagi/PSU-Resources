@@ -6,14 +6,12 @@ using namespace std;
 
 
 node::node(){
-    // make sure to set pointers to NULL
     data = 0;
-    next = NULL;
 }
 
 
 node::~node(){
-    // When dealing with Nodes the controlling structure should handle deleting each node not the node itself
+    delete next;
     next = NULL;
 }
 
@@ -24,8 +22,7 @@ int displayAll(node* head){
 
     cout << head->data << "->";
     
-    // Make sure to include any incrementing values in the return.
-    return 1 + displayAll(head->next);
+    return displayAll(head->next);
 }
 
 
@@ -36,15 +33,12 @@ int addAfter2(node* head, int toAdd){
     
     if(!head) return 0;
     
-    // make sure to bracket code blocks
     if(head->data == 2)
-    {
         temp =  head->next;
         head->next = new node;
         head->next ->data = toAdd;
         head->next ->next = temp;
         ++ret;
-    }
     return ret + addAfter2(head->next, toAdd);
 }
 
@@ -57,8 +51,7 @@ int appendIfDivisible (node*& head, int toAdd){
     if(!head) return ret;
     
     if(!head->next){
-        // Be carefull with = vs +=
-        ret = head->data % toAdd;
+        ret += head->data % toAdd;
         if(!ret)
         {
             node* temp = new node;
@@ -78,10 +71,9 @@ int modifyAfter2(node*& head){
 
     if(!head) return 0;
 
-    // draw the pointer diagrams or use some method to help ensure that you are assigning correctly.
     if(head->next && head->data == 2){
-        node*temp = head->next;
-        head->next = temp->next;
+        node*temp = head;
+        head = temp->next;
         delete temp;
         ++ret;
     }
@@ -98,8 +90,7 @@ int addToAll(node* head, int toAdd){
 
     head->data += toAdd;
 
-    // carefull of infinite loops due to recursing incorectly.
-    return head->data + addToAll(head->next, toAdd);
+    return head->data + addToAll(head, toAdd);
 }
 
 
