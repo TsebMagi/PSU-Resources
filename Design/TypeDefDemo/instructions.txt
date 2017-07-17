@@ -1,0 +1,5 @@
+This set of practice code is designed to help you learn some basics of Typedef
+and the design of data structures to support a more data agnostic design.
+
+1. Examine the code base.
+2. 

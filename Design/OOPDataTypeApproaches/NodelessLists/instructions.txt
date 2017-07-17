@@ -1,0 +1,17 @@
+This exercise examines a different structure for data structures.
+Main contains a list that we will be adding and removing from.
+When examining results keep in mind that the list is sorted, so 
+even if items are added in reverse order the resulting list will 
+be in order.
+
+
+1. Examing the .cpp and .h files
+2. Compile and run the code.
+3. Plan how you would add search functionality to the List class
+hint: You may need to update more than just the list class.
+4. Add a search funtion and add test cases to main.
+5. Test your code and make any appropriate updates.
+
+6. Plan how you would add a remove last function to the list class.
+7. Implement the remove last and add testing cases to main.
+8. Test your code and make any appropriate updates.
