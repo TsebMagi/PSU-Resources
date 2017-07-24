@@ -69,3 +69,7 @@ P: float longest_over_shortest(node* root)
 Q: Return the sum of the sub tree of height three that has the largest sum.
 D: 5
 P: int max_sub(node* root)
+
+Q: Create a new tree that is formed from every other level in a tree. Return the number of nodes copied.
+D: 3
+P: int copy_every_other(node*& dest, node* src)
